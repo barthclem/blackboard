@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aquila Blackboard</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="content">
+    <nav class="side-nav" id="navBar">
+        <p class="heading">Image Form</p>
+        <form>
+          <label for="name">
+            <input type="text" id="board" placeholder="enter your name"/>
+          </label>
+            
+            <input type="button" id="button" onclick="sendNote()" value="Write Out"/>
+        
+        </form>
+        
+        <div class="details">
+            <p class="heading">Aquila Guys</p>
+           <p>Tutor: DammyKing</p>
+            
+        </div>
+      </nav>
+    <div class="main-content" id="blackBoard">
+        <h2>Aquila Note Pad</h2>
+        <div id="board-div">
+          <h1 id="note"></h2>
+        </div>
+    
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+    var note = document.getElementById('note');
+    var board = document.getElementById('board');
+    var navBoard = document.getElementById('navBar');
+    var mainBoard = document.getElementById('blackBoard');
+
+  
+    function init() {
+      if(localStorage.getItem('presenting')) {
+      } else {
+        navBoard.style.display="none";
+        mainBoard.style.width="100%";
+      }
+    }
+
+    function sendNote(){
+      console.log('write something now');
+      socket.emit('master-write', {
+        note: board.value
+      });
+    }
+  
+    socket.on('write-down', (data) => {
+      note.innerText += `> ${data.note}\n`;
+    });
+  
+  init();
+  </script>
+</body>
+</html>

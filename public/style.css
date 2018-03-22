@@ -1,0 +1,163 @@
+
+/**
+ * Fix user-agent
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 99vh;
+    font-family:  "Segoe UI",Arial,sans-serif;
+    font-size: 18px;
+}
+
+/**
+ * Canvas
+ */
+
+.whiteboard {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.colors {
+  position: fixed;
+}
+
+.color {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+}
+
+.color.black { background-color: black; }
+.color.red { background-color: red; }
+.color.green { background-color: green; }
+.color.blue { background-color: blue; }
+.color.yellow { background-color: yellow; }
+
+
+/**#---------------------------------#
+#-----------default style----------#
+#----------------------------------#
+*/
+
+
+.content {
+    background: #ffffff;
+    height: 100%;
+    width:auto;
+    padding-top: 20px;
+}
+
+.side-nav{
+    float: left;
+    height: 100%;
+    padding:20px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+
+.heading{
+    background-color: rgb(1, 15, 15);
+    border-radius: 2%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 100;
+    padding: 10px;
+}
+
+.side-nav .details {
+    margin-top: 170px;
+}
+
+.side-nav .details p:not(.heading){
+    margin-top: 10px;
+    font-size: 100%;
+}
+
+.main-content{
+    display: inline-block;
+    padding-left: 20px;
+    color: #ffffff;
+    background: rgb(0, 0, 0);
+    align-content: center;
+     height: 100%;
+    width: 70%;
+    position: relative;
+    
+}
+
+
+.main-content h2{
+    display:block;
+    color: #ffffff;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    
+}
+
+
+img{
+    margin-left: 10%;
+     max-width: 80%;
+    height: auto;
+}
+
+
+input{
+    margin: 10px;
+}
+
+
+input[type="text"] {
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 30px;
+    width:auto;
+    display: block;
+    padding: 5px;
+}
+
+input[type="button"] {
+     border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+     margin:10px auto;
+    font-size: 100%;
+    color: #ffffff;
+    background-color:darkslategrey; 
+    width: 90%;
+}
+
+input[type="button"]:hover {
+     border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 100%;
+    color:darkslategrey;
+    background-color:#ffffff; 
+    width: 90%;
+    transition-delay: 0.1s;
+}
