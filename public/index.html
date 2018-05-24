@@ -27,9 +27,9 @@
         </div>
       </nav>
     <div class="main-content" id="blackBoard">
-        <h2>Aquila Note Pad</h2>
+        <h2>Cattle Tracker Server Log</h2>
         <div id="board-div">
-          <h1 id="note"></h2>
+          <h3 id="note"></h3>
         </div>
     
       </div>
@@ -61,6 +61,12 @@
     socket.on('write-down', (data) => {
       note.innerText += `> ${data.note}\n`;
     });
+
+ socket.on('log', (data) => {
+      console.log(`Server Log -> ${data.note}`);
+      note.innerText += `> ${data.note}\n`;
+    }); 
+
   
   init();
   </script>

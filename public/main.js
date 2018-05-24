@@ -14,6 +14,10 @@
     });
   }
 
+ socket.on('log', (data) => {
+ note.innerText += `> ${data.note}`;
+});
+
   socket.on('write-down', (data) => {
     note.innerText = `${data.note}`;
   });
